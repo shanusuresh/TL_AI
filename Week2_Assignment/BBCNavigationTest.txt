@@ -1,0 +1,47 @@
+package com.bbc.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+/**
+ * This class contains a Selenium test that navigates to the BBC homepage
+ * and clicks on the 'Home' link using a reliable XPath locator.
+ */
+public class BBCNavigationTest {
+
+    private WebDriver driver;
+
+    /**
+     * Initializes the Chrome WebDriver and opens the BBC website.
+     */
+    @BeforeClass
+    public void setUp() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.bbc.com/");
+    }
+
+    /**
+     * Locates and clicks on the 'Home' link in the BBC navigation bar.
+     */
+    @Test
+    public void clickOnHomeLink() {
+        WebElement homeLink = driver.findElement(By.xpath("//a[@href='https://www.bbc.co.uk']//span[text()='Home']"));
+        homeLink.click();
+    }
+
+    /**
+     * Closes the WebDriver after the test execution.
+     */
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

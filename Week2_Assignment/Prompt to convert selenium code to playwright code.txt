@@ -1,0 +1,118 @@
+
+Instruction:
+
+Convert the following Selenium Java code into Playwright TypeScript code for the search functionality.
+
+Follow the latest Playwright TypeScript syntax.
+
+Generate exactly the same steps and no additional steps.
+
+Write comments.
+
+Do not hardcode waits or use sleep; rely on Playwright’s wait mechanisms.
+
+Use the same locator as in Selenium wherever possible.
+
+If a locator may fail due to geolocation-specific variations (e.g., different BBC layouts in UK vs non-UK), use a geo-safe locator:
+
+Prefer locating links/buttons by text and partial href (e.g., //a[contains(@href,'bbc.') and text()='Home']) instead of assuming exact DOM structures like header nav.
+
+Use .first() if multiple matches exist to avoid strict mode errors.
+
+Wait for elements to be visible or attached instead of assuming their container exists.
+
+If you are unable to convert from Java to TypeScript, comment not implemented.
+
+[CRITICAL] The output must be Playwright TypeScript code, not plain TypeScript.
+
+Context:
+You are an AI assistant converting Selenium Java code into Playwright TypeScript code.
+The project is a media web application and the URL is https://www.bbc.com
+
+
+Examples:
+The Selenium java code:
+package com.bbc.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+/**
+ * This class contains a Selenium test that navigates to the BBC homepage
+ * and clicks on the 'Home' link using a reliable XPath locator.
+ */
+public class BBCNavigationTest {
+
+    private WebDriver driver;
+
+    /**
+     * Initializes the Chrome WebDriver and opens the BBC website.
+     */
+    @BeforeClass
+    public void setUp() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.bbc.com/");
+    }
+
+    /**
+     * Locates and clicks on the 'Home' link in the BBC navigation bar.
+     */
+    @Test
+    public void clickOnHomeLink() {
+        WebElement homeLink = driver.findElement(By.xpath("//a[@href='https://www.bbc.co.uk']//span[text()='Home']"));
+        homeLink.click();
+    }
+
+    /**
+     * Closes the WebDriver after the test execution.
+     */
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}
+
+
+
+Sample Playwright typescript code:
+import { test, expect } from '@playwright/test';
+
+test('has title', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+
+  // Expect a title "to contain" a substring.
+  await expect(page).toHaveTitle(/Playwright/);
+});
+
+test('get started link', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'Get started' }).click();
+
+  // Expects page to have a heading with the name of Installation.
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+});
+
+
+Persona:
+Act as a senior automation test engineer to generate the code
+Act as a senior technical architect to review the code
+
+
+Output format:
+Follow the coding standards and generate a Playwright typescript code
+
+
+
+
+
+

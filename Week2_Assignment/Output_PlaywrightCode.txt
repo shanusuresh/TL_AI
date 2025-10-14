@@ -1,0 +1,23 @@
+import { test, expect } from '@playwright/test';
+
+test.describe('BBC Navigation Functionality', () => {
+  test('clickOnHomeLink', async ({ page }) => {
+    // Navigate to BBC homepage
+    await page.goto('https://www.bbc.com/', { waitUntil: 'domcontentloaded' });
+
+    // Locate 'Home' link anywhere visible with BBC URL in href
+    const homeLink = page.locator("//a[contains(@href,'bbc.') and normalize-space(text())='Home']").first();
+
+    // Wait until the link is visible
+    await homeLink.waitFor({ state: 'visible' });
+
+    // Click the 'Home' link
+    await homeLink.click();
+
+    // Wait for navigation to complete
+    await page.waitForLoadState('load');
+
+    // Verify navigation URL contains bbc
+    await expect(page).toHaveURL(/bbc\.(com|co\.uk)/);
+  });
+});

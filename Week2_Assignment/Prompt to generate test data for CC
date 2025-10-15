@@ -1,0 +1,33 @@
+Instructions:
+Generate ONLY 10 unique test data for Credit card applications
+Include different types of cards
+Include different types of conditions
+All applicants must be from India.
+Ensure gender diversity
+
+Context
+You are an AI assistant for test data generation
+The project is banking application and it is for credit card application and approval process
+
+Examples
+Here is the sample test data
+{
+    "applicantName": "TestUser_1",
+    "age": 29,
+    "annualIncome": 45000,
+    "employmentType": "Salaried",
+    "creditScore": 712,
+    "creditScoreRange": "Good",
+    "existingCustomer": true,
+    "cardType": "Gold",
+    "hasPreviousDefaults": false,
+    "applicationPurpose": "Shopping",
+    "country": "INDIA",
+    "email": "testuser_1@example.com",
+    "phone": "+447152347829"
+  },
+
+Output format
+Provide the output in Excel-ready format
+Include a header row with the following field names in order:
+applicantName, age, gender, annualIncome, employmentType, creditScore, creditScoreRange, existingCustomer, cardType, hasPreviousDefaults, applicationPurpose, country, email, phone

@@ -1,3 +1,5 @@
+Prompt:
+-------
 Instructions:
 Generate ONLY 10 unique test data for Credit card applications
 Include different types of cards
@@ -31,3 +33,17 @@ Output format
 Provide the output in Excel-ready format
 Include a header row with the following field names in order:
 applicantName, age, gender, annualIncome, employmentType, creditScore, creditScoreRange, existingCustomer, cardType, hasPreviousDefaults, applicationPurpose, country, email, phone
+
+
+API Integtation:
+---------------
+
+{
+  "model": "llama-3.3-70b-versatile",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Instructions:\nGenerate ONLY 10 unique test data for Credit card applications\nInclude different types of cards\nInclude different types of conditions\nAll applicants must be from India.\nEnsure gender diversity\n\nContext\nYou are an AI assistant for test data generation\nThe project is banking application and it is for credit card application and approval process\n\nExamples\nHere is the sample test data\n{\n    \"applicantName\": \"TestUser_1\",\n    \"age\": 29,\n    \"annualIncome\": 45000,\n    \"employmentType\": \"Salaried\",\n    \"creditScore\": 712,\n    \"creditScoreRange\": \"Good\",\n    \"existingCustomer\": true,\n    \"cardType\": \"Gold\",\n    \"hasPreviousDefaults\": false,\n    \"applicationPurpose\": \"Shopping\",\n    \"country\": \"INDIA\",\n    \"email\": \"testuser_1@example.com\",\n    \"phone\": \"+447152347829\"\n  },\n\nOutput format\nProvide the output in Excel-ready format\nInclude a header row with the following field names in order:\napplicantName, age, gender, annualIncome, employmentType, creditScore, creditScoreRange, existingCustomer, cardType, hasPreviousDefaults, applicationPurpose, country, email, phone"
+    }
+  ]
+}

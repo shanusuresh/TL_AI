@@ -1,0 +1,25 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Identify the text in this image?"
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "https://shifu.hotstarext.com/SOURCE/VOD/cd-2025-08-29/PKLEveryday_Web-025dd6fe-6750-407c-a170-826fd089bed0.jpg"
+          }
+        }
+      ]
+    }
+  ],
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "temperature": 1,
+  "max_completion_tokens": 1024,
+  "top_p": 1,
+  "stream": false,
+  "stop": null
+}

@@ -1,0 +1,107 @@
+Prompt:
+-------
+"Title: Add “Top Story” section to BBC homepage
+
+User Story:
+As a news reader,
+I want to see a dedicated Top Story section on the homepage,
+So that I can quickly access the most important and trending news without scrolling through multiple sections.
+
+Acceptance Criteria:
+
+Display Top Story Section
+
+The homepage must have a clearly labeled Top Story section near the top.
+
+Section title: “Top Story”.
+
+Content Display
+
+Only one main story is highlighted as the Top Story.
+
+Includes headline, featured image, short description (1–2 lines), and publication time.
+
+Clicking on the story navigates to the full article.
+
+Dynamic Updates
+
+The Top Story should automatically update based on editorial priority.
+
+No hardcoded story; must pull dynamically from the content API.
+
+Responsive Design
+
+Section must display correctly on desktop, tablet, and mobile screens.
+
+Image and text should adjust layout appropriately.
+
+Accessibility
+
+Section must be accessible via keyboard navigation and screen readers.
+
+Headline must use semantic <h2> or appropriate heading level.
+
+Optional / Nice-to-Have:
+
+Display a small badge like “Live” if the story is breaking news.
+
+Include sharing options (Twitter, Facebook, Email) for the top story." "
+
+
+
+Prompt:
+------
+I – Instructions
+
+Generate exactly 10 unique non-functional test cases derived from the acceptance criteria for the BBC News home page.
+Each test case must cover performance, accessibility, or security (ensure balanced coverage across all three).
+Write test steps using the Given-When-Then format.
+Use simple English and begin each Test Description with an action verb (e.g., Verify, Measure, Ensure).
+Do not include functional behaviors (e.g., “user can read headlines”). Focus only on non-functional attributes.
+Output only the table—no explanations, introductions, or extra text.
+
+C – Context
+You are an AI assitant to generate non fucntional test cases from the given user story
+You are testing the BBC News web application, specifically its home page.
+The goal is to validate non-functional quality attributes that impact user experience, compliance, and system reliability.
+
+E – Example
+
+Test case ID: T01,
+test title: Verify homepage loads in ≤2s on 3G,
+Test data: 3G network profile,
+Test steps: Given a device on a 3G network
+            When the BBC News homepage is requested
+            Then the full page loads within 2 seconds,
+Precondition: Device connected to 3G; cache cleared,
+Expected result: Load time ≤ 2 seconds
+
+
+P – Persona
+You are a Senior Non-Functional Tester with expertise in performance engineering, WCAG accessibility standards, and OWASP security principles. Your output will be reviewed by a Senior Solutions Architect for technical soundness and coverage.
+
+O – Output Format
+
+Include columns: Test ID, Test Description, Test Data, Test Steps, Precondition, Expected Result, Actual Result, Status, Remarks.
+	•	Format output in Excel-ready table.
+Format Test Steps using line breaks (embedded \n or actual line breaks if plain text allows) to clearly separate Given, When, and Then.
+Leave Actual Result, Status, and Remarks as “–”.
+Ensure the table is Excel-ready (i.e., can be copied and pasted directly into Excel with columns aligning correctly).
+
+T – Tone
+Clear, concise, and professional.
+Use active voice and imperative/action-oriented language.
+Avoid jargon unless it’s standard in non-functional testing (e.g., “WCAG 2.1 AA”, “TLS 1.3”)."
+
+
+API Integration:
+---------------
+{
+    "messages": [
+        {
+            "role": "user",
+            "content": "Title: Add \u201CTop Story\u201D section to BBC homepage\n\nUser Story:\nAs a news reader,\nI want to see a dedicated Top Story section on the homepage,\nSo that I can quickly access the most important and trending news without scrolling through multiple sections.\n\nAcceptance Criteria:\n\nDisplay Top Story Section\n\nThe homepage must have a clearly labeled Top Story section near the top.\n\nSection title: \u201CTop Story\u201D.\n\nContent Display\n\nOnly one main story is highlighted as the Top Story.\n\nIncludes headline, featured image, short description (1\u20132 lines), and publication time.\n\nClicking on the story navigates to the full article.\n\nDynamic Updates\n\nThe Top Story should automatically update based on editorial priority.\n\nNo hardcoded story; must pull dynamically from the content API.\n\nResponsive Design\n\nSection must display correctly on desktop, tablet, and mobile screens.\n\nImage and text should adjust layout appropriately.\n\nAccessibility\n\nSection must be accessible via keyboard navigation and screen readers.\n\nHeadline must use semantic <h2> or appropriate heading level.\n\nOptional / Nice-to-Have:\n\nDisplay a small badge like \u201CLive\u201D if the story is breaking news.\n\nInclude sharing options (Twitter, Facebook, Email) for the top story.\n\n\nPrompt:\n------\nI \u2013 Instructions\n\nGenerate exactly 10 unique critical non-functional test cases derived from the acceptance criteria for the BBC News home page.\nEach test case must cover performance, and accessibility.\nWrite test steps using the Given-When-Then format.\nUse simple English and begin each Test Description with an action verb (e.g., Verify, Measure, Ensure).\nDo not include functional behaviors (e.g., \u201Cuser can read headlines\u201D). Focus only on non-functional attributes.\nOutput only the table\u2014no explanations, introductions, or extra text.\n\nC \u2013 Context\nYou are an AI assitant to generate non fucntional test cases from the given user story\nYou are testing the BBC News web application, specifically its home page.\nThe goal is to validate non-functional quality attributes that impact user experience and system reliability.\n\nE \u2013 Example\n\nTest case ID: T01,\ntest title: Verify homepage loads in \u22642s on 3G,\nTest data: 3G network profile,\nTest steps: Given a device on a 3G network\n            When the BBC News homepage is requested\n            Then the full page loads within 2 seconds,\nPrecondition: Device connected to 3G; cache cleared,\nExpected result: Load time \u22642 seconds\n\n\nP \u2013 Persona\nYou are a Senior Non-Functional Tester with expertise in performance engineering, WCAG accessibility standards and principles. Your output will be reviewed by a Senior Solutions Architect for technical soundness and coverage.\n\nO \u2013 Output Format\n\nInclude columns: Test ID, Test Description, Test Data, Test Steps, Precondition, Expected Result, Actual Result, Status, Remarks.\n\t\u2022\tFormat output in Excel-ready table.\nFormat Test Steps using line breaks (embedded \\n or actual line breaks if plain text allows) to clearly separate Given, When, and Then.\nLeave Actual Result, Status, and Remarks as \u201C\u2013\u201D.\nEnsure the table is Excel-ready (i.e., can be copied and pasted directly into Excel with columns aligning correctly).\n\nT \u2013 Tone\nClear, concise, and professional.\nUse active voice and imperative/action-oriented language.\nAvoid jargon unless it\u2019s standard in non-functional testing (e.g., \u201CWCAG 2.1 AA\u201D, \u201CTLS 1.3\u201D)."
+        }
+    ],
+    "model": "llama-3.3-70b-versatile"
+}
